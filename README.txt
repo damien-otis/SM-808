@@ -49,4 +49,7 @@ Can the velocity be set?
 > How would you test it (or better)?
 
 	I would probably have to write my own testing framework, as I doubt there are any front-end testing solutions capable of testing a webapp with an audio output.
-	
+
+> Try to keep external dependencies to a minimum.
+
+	No external dependencies, all hand-coded from scrach in a weekend.
