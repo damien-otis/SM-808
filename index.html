@@ -1,0 +1,83 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="sm-808.css">
+<script src="sm-808_Utility.js"></script>
+<title>SM-808</title>
+<script src="sm-808_Start.js"></script>
+<script src="sm-808_Sequencer.js"></script>
+<script src="sm-808_Track.js"></script>
+<script src="sm-808_Instrument.js"></script>
+<script src="sm-808_Knob.js"></script>
+
+</head>
+<body onload="start()">
+<h1>SM-808 - Damien Otis</h1>
+
+<div id="Loading">
+	<div id="Loading_Content">
+		<div id="Loading_Message">Loading Samples...</div>
+		<div id="Loading_Progress">
+			<div id="Loading_Progress_Bar"></div>
+		</div>
+	</div>
+	<div id="Loading_Lightbox"></div>
+</div>
+
+<!--__________________________________________________________________-->
+
+<div id="Templates">
+
+<!--______________________________-->
+
+
+<div id="Sequecner_Template">
+	<div class="Sequencer">
+		<div class="viewport"><button class="playbutton">PLAY</button></div>
+		<div class="container">
+			<div class="songname">{{name}}</div>
+			<div class="steps">
+				<ul>
+				</ul>
+			</div>
+			<div class="buttons">
+				<button>ADD TRACK</button>
+				<button class="save">SAVE</button>
+				<button class="clearPattern">CLEAR PATTERN</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="Tracks"></div>
+
+</div>
+
+<!--______________________________-->
+
+<div id="Track_Template">
+	<div class="Track">
+		<div class="viewport"></div>
+		<div class="container">
+			<div class="name">{{name}}</div>
+			<div class="steps">
+				<ul>
+				</ul>
+			</div>
+			<div class="buttons">
+				<div class="selectsteps">
+					<button class="x8">x8</button>
+					<button class="x16">x16</button>
+					<button class="x32">x32</button>
+				</div>
+				<button class="mute">MUTE</button>
+				<button class="remove">REMOVE</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--______________________________-->
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,443 @@
+/** @module SM-808 CSS */
+
+body {
+	position:absolute;
+	display:inline-block;
+	padding:0;
+	margin:0;
+	width:100%;
+	height:auto;
+	background-color:black;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    font-family:arial;
+    font-size:15;
+}
+
+input,textarea {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: none;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+ul {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+ul li {
+	margin: 0;
+	padding: 0;
+}
+
+button, textarea, input, *:focus {
+	outline:0;
+}
+
+button {
+	margin:0;
+	padding:5px;
+	display:inline-block;
+	text-align:center;
+	font-family:arial;
+	font-size:10px;
+	color:white;
+	border-radius:5px;
+	background-color:#303030;
+	cursor:pointer;
+	
+}
+
+h1 {
+	color:white;
+	text-align:center;
+	padding:10px;
+	font-size:25px;
+}
+
+/*________________________________________________________*/
+
+.New_Instrument{
+	display		: none;
+	background-color: #cacaca;
+	border-radius	: 5px;
+	width		: 80%;
+	position	: absolute;
+	top		: 50px;
+	height		: auto;
+	left		: 10%;
+	padding		: 1%;
+	text-align	: center;
+	margin-bottom	: 50px;
+	padding-bottom	: 40px;
+}
+
+.New_Instrument li {
+	margin:10px;
+	padding:10px;
+	background-color:#eaeaea;
+	border:1px solid #dadada;
+	border-radius:5px;
+	display:inline-block;
+}
+.New_Instrument canvas {
+	margin:10px;
+	border:1px solid #dadada;
+	border-radius:5px;
+}
+
+.New_Instrument button {
+	display:block;
+	width:100%;
+	text-align:center;
+}
+
+.New_Instrument .message{
+	font-size:25px;
+	font-weight:700;
+	padding:10px;
+}
+
+.New_Instrument .close {
+	width:20%;
+	max-width:40%;
+	display:inline-block;
+	margin-top:20px;
+	padding:10px;
+	font-size:18px;
+}
+
+/*________________________________________________________*/
+
+#Loading {
+	display:xone;
+	position:fixed;
+	z-index:1000;
+	width:100%;
+	height:100%;
+}
+
+#Loading_Content {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-150px;
+	margin-top:-100px;
+	width:300px;
+	height:auto;
+	z-index:1000;
+	text-align:center;
+}
+
+#Loading_Lightbox {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color:#202020;
+	opacity:.5;
+	z-index:0;
+}
+
+#Loading_Message {
+	color:white;
+	text-align:center;
+	padding:20px;
+	font-size:20px;
+}
+
+#Loading_Progress {
+	position:relative;
+	display:inline-block;
+	width	: 256px;
+	height	: 20px;
+	background-color:#cacaca;
+	border-radius:5px;
+	overflow:hidden;
+	border:4px solid #7a7a7a;
+	
+}
+
+#Loading_Progress_Bar {
+	position:absolute;
+	top:0px;
+	left:-256px;
+	width:256px;
+	height:20px;
+	background-color:#00ff00;
+}
+/*____________________________________________________________*/
+
+.SequencerViewport {
+	text-align:center;
+
+}
+.SequencerViewport .Sequencer .viewport .playbutton {
+	background-color: #00cc10;
+}
+/*____________________________________________________________*/
+
+
+#Templates {
+	display:none;
+}
+
+/*____________________________________________________________*/
+.Sequencer {
+	position:relative;
+	color:white;
+	background-color:#2c4030;
+	border-radius:5px;
+	display:inline-block;
+	padding: 5px;
+	margin:4px;
+	min-width:1120px;
+	text-align:left;
+}
+
+.Sequencer .viewport {
+	position:relative;
+	vertical-align		: middle;
+	display			: inline-block;
+	position		: relative;
+	width			: 70px;
+	height			: 70px;
+	background-color	: #cacaca;
+	padding			: 5px;
+	margin			: 5px;
+	border-radius		: 5px;
+}
+
+.Sequencer .viewport button {
+	width: 100%;
+	text-align:center;
+	height:70px;
+}
+
+.Sequencer .container {
+	display:inline-block;
+	position:relative;
+	vertical-align:middle;
+}
+
+.Sequencer .container .songname {
+	display:inline-block;
+	margin-bottom:5px;
+}
+
+.Sequencer .container .steps {
+	position:relative;
+	display:block;
+	margin-top:12px;
+}
+
+.Sequencer .container .buttons {
+	position:relative;
+	display:block;
+	margin-top:8px;
+}
+
+.Sequencer .container .buttons .save{
+	margin-left:15px;
+}
+
+.Sequencer .container .buttons .clearPattern{
+	margin-left:25px;
+}
+
+
+
+.Sequencer .viewport .playbutton {
+	font-size:16px;
+	font-weight:700;	
+}
+
+.Sequencer .steps ul li.on {
+	background-Color : #aa0000;
+	-webkit-box-shadow: inset -10px -17px 25px -10px rgba(0,0,0,0.91);
+	-moz-box-shadow: inset -10px -17px 25px -10px rgba(0,0,0,0.91);
+	box-shadow: inset -10px -17px 25px -10px rgba(0,0,0,0.91);
+}
+
+.Sequencer .steps ul li {
+	position:relative;
+	display:inline-block;
+	text-align:center;
+	padding:0;
+	margin:0px;
+	background-color:#1c3020;
+	border-radius:20px;
+	color:white;
+	position:relative;
+	cursor:default;
+	vertical-align:middle;
+	padding:0px;
+	width:30px;
+	margin-right:2px;
+	height:30px;
+	line-height:30px;	
+
+	-webkit-box-shadow: inset 9px 10px 25px -10px rgba(0,0,0,0.91);
+	-moz-box-shadow: inset 9px 10px 25px -10px rgba(0,0,0,0.91);
+	box-shadow: inset 9px 10px 25px -10px rgba(0,0,0,0.91);	
+}
+
+/*____________________________________________________________*/
+
+
+.Track {
+	position:relative;
+	color:white;
+	background-color:#2c3040;
+	border-radius:5px;
+	display:inline-block;
+	padding: 5px;
+	margin:4px;
+	text-align:left;
+	min-width:1120px;
+}
+
+.Track .steps {
+	position:relative;
+	display:	inline-block;
+}
+
+.Track .steps ul li {
+	position:relative;
+	display:inline-block;
+	text-align:center;
+	padding:0;
+	margin:0px;
+	background-color:#cacaca;
+	border-radius:2px;
+	color:black;
+	position:relative;
+	cursor:pointer;
+	vertical-align:middle;
+	padding:0px;
+	width:30px;
+	margin-right:2px;
+	height:34px;
+	line-height:34px;	
+}
+
+.Track .steps ul li.on {
+	background-Color : #00ff00;
+}
+
+.Track .steps ul li.disabled {
+	pointer-events:none;
+	cursor:default;
+	background-color:#8a8a8a;
+}
+.Track .steps ul li.copyon {
+	pointer-events:none;
+	cursor:default;
+	background-Color : #008800;
+}
+
+.Track .container {
+	display:inline-block;
+	position:relative;
+	vertical-align:middle;
+}
+
+.Track .container .buttons {
+	display:block;
+	
+}
+
+.Track .container .buttons .selectsteps {
+	display:inline-block;
+}
+
+.Track .container .buttons .remove {
+	margin-right:10px;
+	margin-top:5px;
+	float:right;
+}
+
+.Track .container .buttons .mute {
+	margin-left:10px;
+}
+
+button.on {
+	background-color:#00c010;
+	color:black;
+}
+
+.Track .viewport {
+	position:relative;
+	vertical-align		: middle;
+	display			: inline-block;
+	position		: relative;
+	width			: 70px;
+	height			: 70px;
+	background-color	: #cacaca;
+	padding			: 5px;
+	margin			: 5px;
+	border-radius		: 5px;
+}
+
+.Track .name {
+	display			: block;
+	vertical-align		: middle;
+	position		: relative;
+	font-size		: 16px;
+}
+
+.Track .selectsteps {
+	display:block;
+	margin-top:5px;
+}
+
+.Track .selectsteps button {
+	display:inline-block;
+}
+
+
+/*____________________________________________________________*/
+
+.Knob {
+	position:relative;
+	width	: 50px;
+	height	: 50px;
+	display:inline-block;
+	background-color:#5B82B5;
+	border-radius:27px;
+	border:2px solid black;
+	cursor:ns-resize;
+}
+
+.Tracks .KnobView {
+	position: absolute;
+	top:20px;
+	background-color:#5A6B82;
+	padding:5px;
+	border-radius:5px;
+	z-index:100;
+	border:2px solid #cacaca;
+}
+
+.Knob img {
+	position:absolute;
+	top:0px;
+	left:16px;
+}
+
+.KnobView .knobval {
+	text-align:center;
+}
