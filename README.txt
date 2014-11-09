@@ -30,19 +30,19 @@ Splice Evaluation
 
 	Yes.
 
-Can the patterns be changed in real time?
+> Can the patterns be changed in real time?
 
 	Yes.
 
-Can the velocity be set?
+> Can the velocity be set?
 
 	Yes. Right-click on each note to edit the velocity with a knob control.
 
->None of these features are expected, what is needed for you to add support for these?
+> None of these features are expected, what is needed for you to add support for these?
 
 	They are supported.
 
->Is your code tested? Why/why not?
+> Is your code tested? Why/why not?
 
 	No. Not enough time, I'm tired and I need some rest.
 
