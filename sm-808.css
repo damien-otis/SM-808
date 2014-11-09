@@ -251,11 +251,13 @@ h1 {
 	margin-left:15px;
 }
 
+.Sequencer .container .buttons .adjustBPM{
+	margin-left:15px;
+}
+
 .Sequencer .container .buttons .clearPattern{
 	margin-left:25px;
 }
-
-
 
 .Sequencer .viewport .playbutton {
 	background-color: #00cc10;
@@ -424,7 +426,7 @@ button.on {
 	cursor:ns-resize;
 }
 
-.Tracks .KnobView {
+.KnobView {
 	position: absolute;
 	top:20px;
 	background-color:#5A6B82;

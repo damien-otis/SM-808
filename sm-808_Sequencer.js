@@ -43,11 +43,17 @@ var Sequencer = function(options){
 		self.clearpattern = self.buttons[2];
 		self.clearpattern.onclick = self.clearPattern;
 
+		self.adjustbpm = self.buttons[3]
+		self.adjustbpm.onmousedown = adjustBPM
+		self.adjustbpm.innerHTML = "BPM: "+self.BPM
+
 		drawSteps();
 	}
 
 	self.is_playing = false;
 	self.BPM = 120;
+	self.BPM_range = [80,150];
+
 	self.steps = 32;
 	self.timer_interval = calcDelay(self.BPM)[self.steps];
 	self.play_step = 0;
@@ -131,6 +137,61 @@ var Sequencer = function(options){
 				dom:step
 			})
 		}
+	}
+
+	/*_______________________________________________________
+	@function adjustBPM
+	@description Click handler for the BPM button to create a new Knob control to set the BPM
+	@arguments n/a
+	@returns undefined
+	@private
+	*/
+	function adjustBPM(evt){
+		var knobview = addDom(newDom("div"),getClass(".Sequencer",self.viewport));
+		knobview.className = "KnobView"
+		var knob = new Knob({
+			viewport	: knobview,
+			callback	: setBPMFromKnob,
+			knob_value	: bpmToKnob(self.BPM),
+			onFinish	: function(thisknob){
+				knobview.parentNode.removeChild(knobview);
+				self.adjustbpm.innerHTML = "BPM: "+(self.BPM.toFixed(1))
+			}
+		})
+		knob.knobval = addDom(newDom("div"),knobview);
+		knob.knobval.className = "knobval";
+		setBPMFromKnob(knob)
+
+		var width = knobview.offsetWidth;
+		var height= knobview.offsetHeight;
+
+		var op = evt.srcElement.offsetParent.offsetParent
+		knobview.style.left = (evt.srcElement.offsetLeft + op.offsetLeft)+"px"
+		knobview.style.top  = (evt.srcElement.offsetTop  + op.offsetTop )+"px"
+	}
+
+	/*_______________________________________________________
+	@function bpmToKnob
+	@description Calculate a value 0-1 based on input BPM relative to BPM_range
+	@arguments bpm [Float]
+	@returns [Float]
+	@private
+	*/
+	function bpmToKnob(bpm) {
+		return (bpm-self.BPM_range[0])/(self.BPM_range[1]-self.BPM_range[0])
+	}
+
+	/*_______________________________________________________
+	@function setBPMFromKnob
+	@description Sets the BPM from a knob callback event
+	@arguments Knob [Object]
+	@returns undefined
+	@private
+	*/
+	function setBPMFromKnob(knob){
+		var new_bpm = ( knob.knob_value * (self.BPM_range[1]-self.BPM_range[0])) +self.BPM_range[0] ///(knob.knob_value * ((self.BPM_range[1]-self.BPM_range[0])+self.BPM_range[0]))
+		self.setBPM(new_bpm)
+		knob.knobval.innerHTML = new_bpm.toFixed(1);
 	}
 
 	/*_______________________________________________________

@@ -134,18 +134,20 @@ var Knob = function(options){
 	@private
 	*/
 	function mouseUp(evt){
-		is_down = false
-		knob_rot = rotation
-		self.knob_value = rotToVal(knob_rot)
+		if (is_down) {
+			is_down = false
+			knob_rot = rotation
+			self.knob_value = rotToVal(knob_rot)
 
-		self.knob.removeEventListener("mousedown",mouseDown);
-		window.removeEventListener("mousemove",mouseMove)
-		window.removeEventListener("mouseup",mouseUp)
-		window.removeEventListener("mouseout",windowOut)
+			self.knob.removeEventListener("mousedown",mouseDown);
+			window.removeEventListener("mousemove",mouseMove)
+			window.removeEventListener("mouseup",mouseUp)
+			window.removeEventListener("mouseout",windowOut)
 
-		self.callback(self)
+			self.callback(self)
 
-		if (self.onFinish){self.onFinish(self)}
+			if (self.onFinish){self.onFinish(self)}
+		}
 	}
 
 	/*_______________________________________________________
