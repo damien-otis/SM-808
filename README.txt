@@ -1,7 +1,8 @@
 All code written by Damien Otis on 11/8/1 - 11/9/14.
 
-See the demoo at http://www.damieno.com/test/Splice
+See the demo at http://www.damieno.com/test/Splice
 
+Based on Practice Exercise https://github.com/mattetti/sm-808/
 
 Splice Evaluation
 
