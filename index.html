@@ -8,7 +8,6 @@
 <script src="sm-808_Track.js"></script>
 <script src="sm-808_Instrument.js"></script>
 <script src="sm-808_Knob.js"></script>
-
 </head>
 <body onload="start()">
 <h1>SM-808 - Damien Otis</h1>
@@ -23,37 +22,30 @@
 	<div id="Loading_Lightbox"></div>
 </div>
 
-<!--__________________________________________________________________-->
+<!--____Templates_____________________________________________________________-->
 
-<div id="Templates">
-
-<!--______________________________-->
-
-
-<div id="Sequecner_Template">
-	<div class="Sequencer">
-		<div class="viewport"><button class="playbutton">PLAY</button></div>
-		<div class="container">
-			<div class="songname">{{name}}</div>
-			<div class="steps">
-				<ul>
-				</ul>
-			</div>
-			<div class="buttons">
-				<button>ADD TRACK</button>
-				<button class="save">SAVE</button>
-				<button class="clearPattern">CLEAR PATTERN</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="Tracks"></div>
-
-</div>
+<script id="Sequecner_Template" type="text/x-template">
+  	<div class="Sequencer">
+  		<div class="viewport"><button class="playbutton">PLAY</button></div>
+  		<div class="container">
+  			<div class="songname">{{name}}</div>
+  			<div class="steps">
+  				<ul>
+  				</ul>
+  			</div>
+  			<div class="buttons">
+  				<button>ADD TRACK</button>
+  				<button class="save">SAVE</button>
+  				<button class="clearPattern">CLEAR PATTERN</button>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="Tracks"></div>
+</script>
 
 <!--______________________________-->
 
-<div id="Track_Template">
+<script id="Track_Template" type="text/x-template">
 	<div class="Track">
 		<div class="viewport"></div>
 		<div class="container">
@@ -73,11 +65,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</script>
+
 <!--______________________________-->
-
-
-</div>
 
 </body>
 </html>
