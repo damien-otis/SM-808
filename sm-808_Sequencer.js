@@ -51,7 +51,7 @@ var Sequencer = function(options){
 	}
 
 	self.is_playing = false;
-	self.BPM = 120;
+	self.BPM = 128;
 	self.BPM_range = [80,150];
 
 	self.steps = 32;
