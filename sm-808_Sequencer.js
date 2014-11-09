@@ -18,18 +18,14 @@ var Sequencer = function(options){
 		config(self,options)
 
 		self.viewport = addDom(newDom("div"));
-		self.viewport.className = "SequencerViewport"
+		self.viewport.className = "SequencerViewport";
 
-		self.template = self.template || getDom("Sequecner_Template").innerHTML
+		self.template = self.template || getDom("Sequecner_Template").innerHTML;
 
 		self.template = self.template.replace(/\{\{name\}\}/g, "")
 		self.viewport.innerHTML = self.template;
 
 		self.Stepsview = getClass(".Sequencer .container .steps ul",self.viewport)[0];
-
-		self.Stepsview.onmousemove = self.mouseMove;
-		self.Stepsview.onmousedown = self.mouseDown;
-		self.Stepsview.onmouseup   = self.mouseUp;
 
 		self.playbutton = getClass(".Sequencer .viewport .playbutton",self.viewport);
 		self.playbutton.onmousedown = self.play
