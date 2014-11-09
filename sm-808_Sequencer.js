@@ -69,20 +69,19 @@ var Sequencer = function(options){
 		if (self.is_playing) {
 			self.play_step = 0
 			timerLoop()
-			self.playbutton.style.backgroundColor = "#881100"
+			self.playbutton.className = "playbutton playing"
 			self.playbutton.innerHTML = "STOP"
 		} else {
 			self.play_step = 0
 			clearTimeout(self.tmr)
 			self.stepbuttons[self.last_play_step].dom.className = ""
-			self.playbutton.style.backgroundColor = "#00cc10"
+			self.playbutton.className = "playbutton"
 			self.playbutton.innerHTML = "PLAY"
 
 			for (var i=0;i<self.tracks.length;i++){
 				self.tracks[i].instrument.sequencer_is_playing = false
 				self.tracks[i].instrument.stop()
 			}
-
 		}
 	}
 

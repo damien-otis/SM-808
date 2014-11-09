@@ -179,23 +179,20 @@ h1 {
 	height:20px;
 	background-color:#00ff00;
 }
+
 /*____________________________________________________________*/
-
-.SequencerViewport {
-	text-align:center;
-
-}
-.SequencerViewport .Sequencer .viewport .playbutton {
-	background-color: #00cc10;
-}
-/*____________________________________________________________*/
-
 
 #Templates {
 	display:none;
 }
 
 /*____________________________________________________________*/
+
+.SequencerViewport {
+	text-align:center;
+
+}
+
 .Sequencer {
 	position:relative;
 	color:white;
@@ -261,8 +258,13 @@ h1 {
 
 
 .Sequencer .viewport .playbutton {
+	background-color: #00cc10;
 	font-size:16px;
 	font-weight:700;	
+}
+
+.Sequencer .viewport .playbutton.playing {
+	background-color: #881100;
 }
 
 .Sequencer .steps ul li.on {
