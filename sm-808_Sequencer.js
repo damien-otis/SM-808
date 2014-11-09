@@ -56,9 +56,6 @@ var Sequencer = function(options){
 	self.timer_interval = calcDelay(self.BPM)[self.steps];
 	self.play_step = 0;
 
-	self.current_pattern = undefined;
-	self.current_pattern_idx = 0;
-
 	self.tracks = [];
 	self.stepbuttons = [];
 
