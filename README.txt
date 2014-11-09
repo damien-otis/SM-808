@@ -36,7 +36,7 @@ Can the patterns be changed in real time?
 
 Can the velocity be set?
 
-	Yes. Right-click on each step to edit the velocity with a knob control.
+	Yes. Right-click on each note to edit the velocity with a knob control.
 
 >None of these features are expected, what is needed for you to add support for these?
 
