@@ -12,6 +12,8 @@ var Knob = function(options){
 	var start_y
 	var rotation
 
+	var is_webkit = 'WebkitAppearance' in document.documentElement.style
+
 	self.knob_value = .5
 
 	/*_______________________________________________________
@@ -47,6 +49,7 @@ var Knob = function(options){
 	*/
 	function setRotate(deg){
 		self.knob.style.transform = "rotate("+deg+"deg)"
+		self.knob.style.webkitTransform = "rotate("+deg+"deg)"
 	}
 
 	/*_______________________________________________________
