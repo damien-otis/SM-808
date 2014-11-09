@@ -199,7 +199,7 @@ h1 {
 .Sequencer {
 	position:relative;
 	color:white;
-	background-color:#2c4030;
+	background-color:#458051;
 	border-radius:5px;
 	display:inline-block;
 	padding: 5px;
@@ -278,7 +278,7 @@ h1 {
 	text-align:center;
 	padding:0;
 	margin:0px;
-	background-color:#1c3020;
+	background-color:#36573C;
 	border-radius:20px;
 	color:white;
 	position:relative;
@@ -301,7 +301,7 @@ h1 {
 .Track {
 	position:relative;
 	color:white;
-	background-color:#2c3040;
+	background-color:#475F7D;
 	border-radius:5px;
 	display:inline-block;
 	padding: 5px;
