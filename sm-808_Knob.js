@@ -137,7 +137,9 @@ var Knob = function(options){
 		if (is_down) {
 			is_down = false
 			knob_rot = rotation
-			self.knob_value = rotToVal(knob_rot)
+			if (knob_rot){
+				self.knob_value = rotToVal(knob_rot)
+			}
 
 			self.knob.removeEventListener("mousedown",mouseDown);
 			window.removeEventListener("mousemove",mouseMove)
@@ -145,7 +147,6 @@ var Knob = function(options){
 			window.removeEventListener("mouseout",windowOut)
 
 			self.callback(self)
-
 			if (self.onFinish){self.onFinish(self)}
 		}
 	}
