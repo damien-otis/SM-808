@@ -17,8 +17,6 @@ function start() {
 
 	var Seq = new Sequencer();
 
-	Seq.Instruments = []
-
 	var progress = getDom("Loading_Progress_Bar")
 	progress.style.left = "-256px"
 

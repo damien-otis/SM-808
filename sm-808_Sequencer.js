@@ -22,26 +22,26 @@ var Sequencer = function(options){
 
 		self.template = self.template || getDom("Sequecner_Template").innerHTML;
 
-		self.template = self.template.replace(/\{\{name\}\}/g, "")
+		self.template = self.template.replace(/\{\{name\}\}/g, "");
 		self.viewport.innerHTML = self.template;
 
 		self.Stepsview = getClass(".Sequencer .container .steps ul",self.viewport)[0];
 
 		self.playbutton = getClass(".Sequencer .viewport .playbutton",self.viewport);
-		self.playbutton.onmousedown = self.play
+		self.playbutton.onmousedown = self.play;
 
 		self.Tracksview = getClass(".Tracks",self.viewport);
 
 		self.buttons = getClass(".Sequencer .container .buttons button",self.viewport);
 
-		self.addtrack = self.buttons[0]
-		self.addtrack.onclick = self.openInstrumentList
+		self.addtrack = self.buttons[0];
+		self.addtrack.onclick = self.openInstrumentList;
 
-		self.save = self.buttons[1]
+		self.save = self.buttons[1];
 		self.save.onclick = self.exportCurrentSong;
 
-		self.clearpattern = self.buttons[2]
-		self.clearpattern.onclick = self.clearPattern
+		self.clearpattern = self.buttons[2];
+		self.clearpattern.onclick = self.clearPattern;
 
 		drawSteps();
 	}
@@ -55,6 +55,8 @@ var Sequencer = function(options){
 	self.tracks = [];
 	self.stepbuttons = [];
 
+	self.Instruments = [];
+
 	self.patterns = []; //currently unused, will hold an array of patterns
 
 	/*_______________________________________________________
@@ -67,20 +69,20 @@ var Sequencer = function(options){
 	self.play = function(){
 		self.is_playing = !self.is_playing;
 		if (self.is_playing) {
-			self.play_step = 0
-			timerLoop()
-			self.playbutton.className = "playbutton playing"
-			self.playbutton.innerHTML = "STOP"
+			self.play_step = 0;
+			timerLoop();
+			self.playbutton.className = "playbutton playing";
+			self.playbutton.innerHTML = "STOP";
 		} else {
-			self.play_step = 0
-			clearTimeout(self.tmr)
-			self.stepbuttons[self.last_play_step].dom.className = ""
-			self.playbutton.className = "playbutton"
-			self.playbutton.innerHTML = "PLAY"
+			self.play_step = 0;
+			clearTimeout(self.tmr);
+			self.stepbuttons[self.last_play_step].dom.className = "";
+			self.playbutton.className = "playbutton";
+			self.playbutton.innerHTML = "PLAY";
 
 			for (var i=0;i<self.tracks.length;i++){
-				self.tracks[i].instrument.sequencer_is_playing = false
-				self.tracks[i].instrument.stop()
+				self.tracks[i].instrument.sequencer_is_playing = false;
+				self.tracks[i].instrument.stop();
 			}
 		}
 	}
