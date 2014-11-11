@@ -147,6 +147,7 @@ var Sequencer = function(options){
 	@private
 	*/
 	function adjustBPM(evt){
+		evt.srcElement = evt.srcElement || evt.target
 		var knobview = addDom(newDom("div"),getClass(".Sequencer",self.viewport));
 		knobview.className = "KnobView"
 		var knob = new Knob({

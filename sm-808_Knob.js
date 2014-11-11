@@ -104,7 +104,7 @@ var Knob = function(options){
 	*/
 	function mouseDown(evt){
 		is_down = true
-		start_y = evt.y
+		start_y = evt.y || evt.pageY
 	}
 
 	/*_______________________________________________________
@@ -116,7 +116,7 @@ var Knob = function(options){
 	*/
 	function mouseMove(evt){
 		if (is_down === true) {
-			var diff = start_y - evt.y
+			var diff = start_y - (evt.y||evt.pageY)
 			rotation = diff + knob_rot
 			if (rotation>140) {rotation=140}
 			if (rotation <-140) {rotation=-140}

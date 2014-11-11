@@ -33,7 +33,7 @@ function start() {
 			var List = newDom("ul")
 			addDom(List,New_Instrument);
 			var Close = addDom(newDom("button"),New_Instrument);
-			Close.innerText = "CLOSE"
+			Close.innerHTML = "CLOSE"
 			Close.className = "close"
 			Close.onclick = function(){
 				New_Instrument.style.display="none"
@@ -80,7 +80,6 @@ function start() {
 
 			newInst(function(){
 				getDom("Loading").style.display = "none"
-
 				//Load and play default song
 				getFile("default_pattern.json",function(err,res){
 					if (res){

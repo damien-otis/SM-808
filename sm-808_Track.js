@@ -71,6 +71,7 @@ var Track = function(options){
 	@private
 	*/
 	function stepsMouseDown(evt){
+		evt.srcElement = evt.srcElement || evt.target
 		if (evt.srcElement.tagName.toLowerCase() === "li" && evt.toElement.tagName.toLowerCase() === "li") {
 			painting = true
 			paint_mode = undefined;
@@ -86,7 +87,8 @@ var Track = function(options){
 	@private
 	*/
 	function stepsMouseOver(evt){
-	if (painting === true && evt.srcElement.tagName.toLowerCase() === "li" && evt.toElement.tagName.toLowerCase() === "li") {
+		evt.srcElement = evt.srcElement || evt.target
+		if (painting === true && evt.srcElement.tagName.toLowerCase() === "li" && evt.toElement.tagName.toLowerCase() === "li") {
 			clickStep(evt)
 			evt.cancelBubble = true;
 			evt.preventDefault();
@@ -101,6 +103,7 @@ var Track = function(options){
 	@private
 	*/
 	function stepsMouseOut(evt){
+		evt.srcElement = evt.srcElement || evt.target
 		if (evt.toElement === null) {
 			painting = false
 			paint_mode = undefined;
@@ -117,6 +120,7 @@ var Track = function(options){
 	@private
 	*/
 	function stepsMouseUp(evt){
+		evt.srcElement = evt.srcElement || evt.target
 		painting = false
 		paint_mode = undefined;
 		evt.cancelBubble = true;
@@ -152,7 +156,7 @@ var Track = function(options){
 		}
 		for (var i=0;i<self.steps;i++){
 			self.current_pattern[i].dom.innerHTML = i+1
-			self.current_pattern[i].dom.className = ""
+			self.current_pattern[i].dom.className = "off"
 			if (self.current_pattern[i].on===true) {
 				self.current_pattern[i].dom.className = "on"
 			}
@@ -187,6 +191,7 @@ var Track = function(options){
 		self.stepview.innerHTML = ""
 		for (var i=0,step;i<steps;i++) {
 			step = addDom(newDom("li"),self.stepview);
+			step.className = "off"
 			step.setAttribute("step",i)
 			step.innerHTML = i+1
 			step.onmousedown = clickStep
@@ -208,6 +213,7 @@ var Track = function(options){
 	@private
 	*/
 	function contextClick(evt){
+		evt.srcElement = evt.srcElement || evt.target
 
 		var this_step = self.current_pattern[parseInt(evt.srcElement.getAttribute("step"),10)]
 		var knobview = addDom(newDom("div"),getClass(".Track",self.viewport));
@@ -270,7 +276,7 @@ var Track = function(options){
 	@private
 	*/
 	function clickStep(evt){
-
+		evt.srcElement = evt.srcElement || evt.target
 		if (evt.button !== 0) {return}
 
 		var step = parseInt(evt.srcElement.getAttribute("step"),10)
@@ -283,7 +289,7 @@ var Track = function(options){
 			paint_mode = this_step.on
 		}
 
-		this_step.dom.className = (this_step.on) ? "on" : ""
+		this_step.dom.className = (this_step.on) ? "on" : "off"
 
 		self.setSteps(self.steps)
 
