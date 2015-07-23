@@ -13,7 +13,7 @@ Splice Evaluation
 
 > How much time did you spend on the exercise, what parts took longer?
 
-About 22 hours over 2 days, including full documentation. The hardest part was using the Web Audio API features, because I had not previously used them and had to learn it while coding.
+About 22 hours over 2 days, including full documentation. The most time consuming was using the Web Audio API features, because I had not previously used them and had to learn it while coding.
 
 > What were the hard parts, what parts did you enjoy most?
 
