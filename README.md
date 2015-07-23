@@ -21,11 +21,11 @@ The hard parts were dealing with the Web Audio API. I had to learn a bit before 
 
 > Data modeling - How did you model the concepts of songs and tracks/patterns, can you explain why?
 
-This is a limited demo, and the concept of songs is not modeled, only tacks/patterns. If I had more time I would create a playlist editor and implement creating multiple patterns, and arrangements of patterns in the playlist editor. I will probably continue this code in the future, because why stop here?
+This is a limited demo, and the concept of songs is not modeled, only tacks/patterns. If I had more time I would create a playlist editor with multiple patterns, and arrangements of patterns. 
 
 > Simplicity vs Flexibility - How flexible is your solution? 
 
-Very.
+It is both simple and flexible. Volume knob control for each step, BPM is adjustable, it has all of the "extras".
 
 > Can a user define patterns of different lengths? 
 
@@ -49,12 +49,12 @@ They are supported.
 
 > Is your code tested? Why/why not?
 
-No. Not enough time, I'm tired and I need some rest.
+No. Not enough time, after 22 hours of coding I'm tired and I need some rest.
 
 > How would you test it (or better)?
 
-I would probably have to write my own testing framework, as I doubt there are any front-end testing solutions capable of testing a webapp with an audio output.
+I would probably have to develop a new kind of test to deal with web audio to fully test this.
 
 > Try to keep external dependencies to a minimum.
 
-No external dependencies, all hand-coded from scrach in a weekend.
+No external dependencies, it was hand-coded from scrach in a weekend.
