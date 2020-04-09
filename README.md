@@ -5,7 +5,7 @@ See the demo at http://www.damieno.com/test/Splice
 Based on the coding challenge https://github.com/mattetti/sm-808/
 
 
-![alt tag](http://dmtmix.com/imghit/getImage.asp?img=SM-808.png)
+![alt tag](http://dmtmix.com/dnetAPI/getImage/SM-808.png)
 
 
 
